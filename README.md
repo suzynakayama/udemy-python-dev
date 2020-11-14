@@ -26,6 +26,10 @@
         - [Short Circuiting using 'OR' and 'AND'](#short-circuiting-using-or-and-and)
           - ['IS' vs '=='](#is-vs-)
         - [Range and Enumerate](#range-and-enumerate)
+    - [Functions](#functions)
+        - [*args and **kwargs](#args-and-kwargs)
+    - [Walrus Operator - Python 3.8](#walrus-operator---python-38)
+    - [global and nonlocal](#global-and-nonlocal)
 
 ## Python
 
@@ -233,4 +237,84 @@ print(list(y))      # [(0,'a'), (1,'b'), (2,'c')]
 
 z = enumerate(x,2)
 print(list(z))      # [(2,'a'), (3,'b'), (4,'c')]
+```
+
+### Functions
+
+Positional Arguments - when we use this type of arguments, we need to pay attention to the order that we add them.
+
+```python
+def my_function(arg_a, arg_b, arg_c):
+    # do something
+    pass
+
+my_function(a, b, c)
+```
+
+Keyword Arguments - it means we are giving the name of the parameter to the argument, so we don't really need to care for the arguments order.
+
+```python
+def my_function(arg_a, arg_b, arg_c):
+    # do something
+    pass
+
+my_function(arg_a=a, arg_c=c, arg_b=b)
+```
+
+Default Parameters - allow us to give what we want the parameters to default to if no argument is given to the function when called.
+
+```python
+def my_function(arg_a, arg_b=None, arg_c):
+    # do something
+    pass
+
+my_function(arg_a=a, arg_c=c)
+```
+
+##### *args and **kwargs
+
+*args - shows that function can accept any number of positional arguments
+
+**kwargs - shows that function can accept any number of keyword arguments
+
+When using both, the **kwargs always comes after the *args.
+
+Rule of parameters/arguments:
+**params, *args, default parameters, **kwargs**
+
+### Walrus Operator - Python 3.8
+
+`:=`
+
+Way of assign values to variables as part of a longer expression.
+Ex:
+
+```python
+a = 'hellooooooo'
+
+if ((n := len(a)) > 10):
+    print(f'too long {n} elements')
+```
+
+### global and nonlocal
+
+In order to use a global variable inside a function we have 2 ways:
+
+- Use the `global` keyword within the function with the variable
+- Pass as argument to the function
+
+`nonlocal` is a new keyword (python 3.8) that allows you to use the parent scope within the inner scope.
+
+```python
+def outer():
+    x = 'local'
+    def inner():
+        nonlocal x
+        x = 'nonlocal'
+        print('inner: ', x)
+    inner()
+    print('outer: ', x)
+
+outer()             # inner: nonlocal // outer: nonlocal
+
 ```
