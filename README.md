@@ -42,6 +42,8 @@
         - [Map(), Filter(), Zip(), Reduce()](#map-filter-zip-reduce)
         - [Lambda Expressions](#lambda-expressions)
         - [List/Set/Dictionary Comprehensions](#listsetdictionary-comprehensions)
+    - [Decorators](#decorators)
+    - [Error Handling](#error-handling)
 
 ## Python
 
@@ -549,3 +551,45 @@ my_list_with_comprehension = [char for char in 'hello']
 print(my_list)
 ```
 
+### Decorators
+
+[Summary](#summary)
+
+A decorator supercharges our function. Is simply a function that wraps another function and enhances it or changes it. It's a HOC (higher order function).
+
+```python
+def my_decorator(func):
+    def wrap_func():
+        print('**********')
+        func()
+        print('**********')
+    return wrap_func
+
+@my_decorator
+def hello():
+    print('Hello')
+
+hello()
+```
+
+### Error Handling
+
+[Summary](#summary)
+
+Python has a lot of types of errors, for example: syntax error, name error, value error, type error, index error, key error, zero division error etc.
+
+To handle these errors, we can use the try/except block.
+
+```python
+while True:
+    try:
+        age = int(input('what is your age? '))
+        print(10/age)
+    except ValueError:
+        print('please enter a number')
+    except ZeroDivisionError:
+        print('please enter an age higher than 0.')
+    else:
+        print('Nice!')
+        break
+```
