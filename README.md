@@ -37,6 +37,11 @@
           - [Introspection](#introspection)
         - [Multiple Inheritance](#multiple-inheritance)
         - [Method Resolution Order (MRO)](#method-resolution-order-mro)
+    - [Functional Programming](#functional-programming)
+        - [Pure Functions](#pure-functions)
+        - [Map(), Filter(), Zip(), Reduce()](#map-filter-zip-reduce)
+        - [Lambda Expressions](#lambda-expressions)
+        - [List/Set/Dictionary Comprehensions](#listsetdictionary-comprehensions)
 
 ## Python
 
@@ -437,3 +442,110 @@ class Hybrid(Wizard, Archer):
 [Summary](#summary)
 
 You can use the `__mro__` or `.mro()` to figure out the order of classes (when you have multiple inheritance) the code will look for in order to find the method/attribute you are 'calling'.
+
+### Functional Programming
+
+[Summary](#summary)
+
+It's all about separation of concerns, separate the code into small functions that only do one thing.
+
+It also separates data and functions.
+
+##### Pure Functions
+
+[Summary](#summary)
+
+Pure functions have 2 rules:
+- It will always return the same output when given the same input.
+- A function should not produce any side effects. Ex. print something to the screen or changing a global variable.
+
+Ex. this is a pure function, because it follows both rules.
+
+```python
+def multiply_by2(li):
+    new_list = []
+    for item in li:
+        new_list.append(item * 2)
+    return new_list
+
+print(multiply_by2([1, 2, 3]))
+```
+
+It is impossible to have pure function everywhere, however, whenever you can have a pure function, you should have it.
+
+##### Map(), Filter(), Zip(), Reduce()
+
+[Summary](#summary)
+
+1. Map() - 1st parameter is the function and the others are the arguments. When you call map, it will iterate over the items and run the function on them. Ex.
+
+```python
+def multiply_by2(item):
+    return item * 2
+
+print(list(map(multiply_by2,[1, 2, 3])))
+```
+
+If we print just map(), it will print a map object and its location. So, in order to print the results, we need to transform it into a list.
+
+2. Filter() - it will filter the argument's list according to the function given.
+   
+```python
+def odd(item):
+    return item % 2 != 0
+
+print(list(filter(odd,[1, 2, 3])))
+```
+
+1. Zip() - it will zip iterables together. It will create tuples with the items of both iterables on the same index.
+   
+```python
+my_list = [1, 2, 3]
+your_list = [10, 20, 30]
+
+print(list(zip(my_list, your_list)))            # [(1, 10), (2, 20), (3, 30)]
+```
+
+4. Reduce() - it doesn't come as part of python package. We need to import from `functools`. It will reduce the iterable according to the function passed.
+
+```python
+from functools import reduce
+
+def accumulator(acc, item):
+    return acc + item
+
+print(reduce(accumulator, [1,2,3], 0))
+```
+
+##### Lambda Expressions
+
+[Summary](#summary)
+
+Are one anonymous functions that you will only use once.
+`lambda param: function(param)`
+
+```python
+print(list(map(lambda item: item * 2, [1,2,3])))
+
+print(reduce(lambda acc, item: acc + item, [1,2,3]))
+```
+
+##### List/Set/Dictionary Comprehensions
+
+[Summary](#summary)
+
+Quick way for us to create a list/set/dictionary instead of looping.
+
+```python
+# before
+
+my_list = []
+
+for char in 'hello':
+    my_list.append(char)
+
+my_list_with_comprehension = [char for char in 'hello']
+
+print(my_list)
+```
+

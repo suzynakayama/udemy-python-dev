@@ -216,11 +216,3 @@ set3.issuperset(set2)       # False, it's the other ways around! set2 issuperset
 
 set1.union(set2)               # {1,2,3,4,5,6,7,8,9,10}
 print(set1 | set2)              # same as union
-
-
-
-
-
-
-
-
