@@ -44,6 +44,8 @@
         - [List/Set/Dictionary Comprehensions](#listsetdictionary-comprehensions)
     - [Decorators](#decorators)
     - [Error Handling](#error-handling)
+    - [Generators](#generators)
+    - [Debugging](#debugging)
 
 ## Python
 
@@ -592,4 +594,37 @@ while True:
     else:
         print('Nice!')
         break
+```
+
+### Generators
+
+[Summary](#summary)
+
+Generators are usually functions. Yield pauses the function and will continue only when told to continue.
+
+```python
+def generator_func(num):
+    for i in range(num):
+        yield i
+
+g = generator_func(10)
+next(g)
+next(g)
+print(next(g))
+```
+
+### Debugging
+
+[Summary](#summary)
+
+Python has a library called pdb (python debugger) that we can use to debug our code.
+
+```python
+import pdb
+
+def add(num1, num2):
+    pdb.set_trace()                 # code will stop here and open a debugger where you can inspect everything, step, etc.
+    return num1 + num2
+
+add(4, 'hello world')
 ```
