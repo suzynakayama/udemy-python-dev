@@ -46,6 +46,7 @@
     - [Error Handling](#error-handling)
     - [Generators](#generators)
     - [Debugging](#debugging)
+    - [Modules in Python](#modules-in-python)
 
 ## Python
 
@@ -628,3 +629,13 @@ def add(num1, num2):
 
 add(4, 'hello world')
 ```
+
+### Modules in Python
+
+[Summary](#summary)
+
+Modules are just python files. `__pycache__` is created everytime we run a code with an import. It caches the compiled file.
+
+Packages are folders with modules inside.
+
+`__main__` is the file you are running, it doesn't matter the file name.
