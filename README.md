@@ -47,6 +47,8 @@
     - [Generators](#generators)
     - [Debugging](#debugging)
     - [Modules in Python](#modules-in-python)
+    - [File I/O (input / output)](#file-io-input--output)
+    - [Regex - Regular Expressions](#regex---regular-expressions)
 
 ## Python
 
@@ -639,3 +641,38 @@ Modules are just python files. `__pycache__` is created everytime we run a code 
 Packages are folders with modules inside.
 
 `__main__` is the file you are running, it doesn't matter the file name.
+
+### File I/O (input / output)
+
+[Summary](#summary)
+
+Operations:
+- open('text.txt') -> will open the file
+- <file>.read() -> will read the first sentence from the file
+- <file>.readlines() -> will return an array with the lines from the file
+- <file>.close() -> will close the file
+- with open('text.txt', mode='r') as <name you want>-> will open the file and you don't need to close it
+- Modes:
+  - 'r' -> read
+  - 'w' -> write
+  - 'r+' -> read and write
+  - 'a' -> append to the end of the file
+
+IOError is an error that we can put on the try/except block whenever the machine had any problem trying to read/write/open/close a file.
+
+### Regex - Regular Expressions
+
+[Summary](#summary)
+
+Python has the `re` module for regex.
+
+The `re.search` gives back a match object, that tell us the indexes where it occurs and the match.
+
+That match object give us a few methods:
+- span() - the indexes (initial and final)
+- start() - initial index
+- end() - final index
+- group() - group the patterns found
+
+**Important Note: You will see an `r` before the regex. The `r` means it is a *`raw string`*, so python interpreter will ignore python special characters.** Ex. `r"([a-zA-Z])"`
+
