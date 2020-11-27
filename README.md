@@ -49,6 +49,7 @@
     - [Modules in Python](#modules-in-python)
     - [File I/O (input / output)](#file-io-input--output)
     - [Regex - Regular Expressions](#regex---regular-expressions)
+  - [Scripting](#scripting)
 
 ## Python
 
@@ -657,6 +658,7 @@ Operations:
   - 'w' -> write
   - 'r+' -> read and write
   - 'a' -> append to the end of the file
+  - 'rb' -> read and binary
 
 IOError is an error that we can put on the try/except block whenever the machine had any problem trying to read/write/open/close a file.
 
@@ -676,3 +678,41 @@ That match object give us a few methods:
 
 **Important Note: You will see an `r` before the regex. The `r` means it is a *`raw string`*, so python interpreter will ignore python special characters.** Ex. `r"([a-zA-Z])"`
 
+
+## Scripting
+
+[Summary](#summary)
+
+- Pillow lib:
+  - Image
+    - open(<img name>)
+  - ImageFilter
+    - <filter> - ex. BLUR
+  - save(<name>, <type/jpg/png>)
+  - rotate(<angle>)
+  - resize(<tuple with new size>)
+  - crop(<tuple with px to crop>)
+  - thumbnail(<tuple with aprox size>) - will keep the image ratio
+  
+- sys
+  - sys.argv[1] - will grab the first argument passed on terminal
+  
+- os
+  - path
+    - exists(<folder/file name>) - check if that path exists
+    - splitext(<filename>) - split the name of the file
+  - listdir(<folder name>) - creates a list of the files/folders in that directory
+  - makedirs(<folder path>) - create a new directory
+  
+- PyPDF2
+  - PdfFileReader(<file>) - creates the reader
+    - reader.getPage(0) - get first page
+      - page.mergePage(<page to be merged>) - will merge the page with another (on top), ex. watermark
+    - reader.numPages - get the number of pages
+    - reader.getNumPages() - get the number of pages
+  - PdfFileWriter() - creates a writer
+    - writer.addPage(<page>) - adds the page
+    - writer.write(<new file name>) - created the new file
+  - PdfFileMerger() - creates a merger - will add pages one after another
+    - merger.append(<pdf file name>) - appends the pdf file
+    - merger.write(<pdf file name>) - creates a super pdf with all the pages one after another
