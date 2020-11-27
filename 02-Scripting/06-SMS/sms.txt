@@ -1,0 +1,3 @@
+He basically copied and pasted the code from twilio website.
+
+He wanted to show the thought process.

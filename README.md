@@ -716,3 +716,5 @@ That match object give us a few methods:
   - PdfFileMerger() - creates a merger - will add pages one after another
     - merger.append(<pdf file name>) - appends the pdf file
     - merger.write(<pdf file name>) - creates a super pdf with all the pages one after another
+
+- 
