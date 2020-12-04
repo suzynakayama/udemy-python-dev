@@ -1,0 +1,22 @@
+body {
+    background-color: navy;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#btn {
+    margin: 2rem auto;
+    width: fit-content;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: azure;
+    color: navy;
+    cursor: pointer;
+}

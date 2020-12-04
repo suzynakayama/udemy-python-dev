@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon copy.ico')}}">
+    <script defer src="static/script.js"></script>
+    <title>My Site</title>
+</head>
+<body>
+    {{name}} site is awesome!
+    <p class='secret hidden'>My secret!</p>
+    <button id='btn'>Click To Reveal The Secret!</button>
+</body>
+</html>

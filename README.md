@@ -50,6 +50,8 @@
     - [File I/O (input / output)](#file-io-input--output)
     - [Regex - Regular Expressions](#regex---regular-expressions)
   - [Scripting](#scripting)
+    - [Web Scraping](#web-scraping)
+        - [PPrint](#pprint)
 
 ## Python
 
@@ -717,4 +719,20 @@ That match object give us a few methods:
     - merger.append(<pdf file name>) - appends the pdf file
     - merger.write(<pdf file name>) - creates a super pdf with all the pages one after another
 
-- 
+### Web Scraping
+
+[Summary](#summary)
+
+Add `robots.txt` at the end of the url to know what you can/cannot scrape on that website.
+
+##### PPrint
+
+[Summary](#summary)
+
+If you want to print something on the terminal, but you want it to be formatted, you can import pprint and use it like:
+
+```python
+import p_print
+
+pprint.pprint(<what I want to print>)
+```
