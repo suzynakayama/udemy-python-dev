@@ -52,6 +52,7 @@
   - [Scripting](#scripting)
     - [Web Scraping](#web-scraping)
         - [PPrint](#pprint)
+        - [Requirements.txt](#requirementstxt)
 
 ## Python
 
@@ -736,3 +737,9 @@ import p_print
 
 pprint.pprint(<what I want to print>)
 ```
+
+##### Requirements.txt
+
+[Summary](#summary)
+
+Type `pip freeze > requirements.txt` on the terminal to create the requirements file with all the packages used on the project.
