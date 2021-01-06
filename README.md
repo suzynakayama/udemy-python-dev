@@ -52,7 +52,7 @@
   - [Scripting](#scripting)
     - [Web Scraping](#web-scraping)
         - [PPrint](#pprint)
-        - [Requirements.txt](#requirementstxt)
+    - [Environment and Requirements.txt](#environment-and-requirementstxt)
 
 ## Python
 
@@ -738,8 +738,23 @@ import p_print
 pprint.pprint(<what I want to print>)
 ```
 
-##### Requirements.txt
+### Environment and Requirements.txt
 
 [Summary](#summary)
+
+In our project folder we want to create the project environment, so all the dependencies are installed on the project, not locally on the computer. This is the same idea as npm init that creates the packages.json.
+
+On the project folder: (Python v2)
+
+1. pip3 install virtualenv // install virtualenv globally
+2. virtualenv env // it creates the virtualenv
+3. source env/bin/activate // activate the environment
+4. deactivate // to exit the venv
+
+(Python 3)
+
+1. python3 -m venv /path/to/directory
+2. source /path/to/venv/bin/activate
+3. deactivate // to exit the venv
 
 Type `pip freeze > requirements.txt` on the terminal to create the requirements file with all the packages used on the project.
