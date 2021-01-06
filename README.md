@@ -53,6 +53,7 @@
     - [Web Scraping](#web-scraping)
         - [PPrint](#pprint)
     - [Environment and Requirements.txt](#environment-and-requirementstxt)
+    - [Machine Learning](#machine-learning)
 
 ## Python
 
@@ -758,3 +759,20 @@ On the project folder: (Python v2)
 3. deactivate // to exit the venv
 
 Type `pip freeze > requirements.txt` on the terminal to create the requirements file with all the packages used on the project.
+
+### Machine Learning
+
+[Summary](#summary)
+
+3 Categories:
+- Supervised: data received already has categories, here we can do things like classification (pears and apples) or regression.
+- Unsupervised: clustering (machine creates the groups by data points) or association (associate things following rules)
+- Reinforcement: all about teaching machines through trial and error training. Real time leaning.
+
+Machine learning steps:
+1. Import data
+2. Clean the data
+3. Split the data. Training Set/Test Set
+4. Create a Model - you can use libraries
+5. Check the output 
+6. Improve - by giving extra columns in the data or changing the model
